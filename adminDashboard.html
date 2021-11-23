@@ -334,7 +334,12 @@
                       <h4>Headmasters</h4>
                   </div>
                 </div>
-                <div class="table-responsive" id="headmasterTable">
+                <div class="row d-flex align-items-center">
+                  <div class="col-lg-3 col-12 form-group">
+                      <input type="text" id="searchHeadmaster" placeholder="Search by name" class="form-control">
+                  </div>
+                </div>
+                <div class="table-responsive mt-5" id="headmasterTable">
                     <table class="table display data-table text-nowrap" id="headmastersDataTable">
                         <thead>
                           <tr>
@@ -359,7 +364,12 @@
                       <h4>Teachers</h4>
                   </div>
                 </div>
-                <div class="table-responsive" id="teacherTable">
+                <div class="row d-flex align-items-center">
+                  <div class="col-lg-3 col-12 form-group">
+                      <input type="text" id="searchTeacher" placeholder="Search by name" class="form-control">
+                  </div>
+                </div>
+                <div class="table-responsive mt-5" id="teacherTable">
                     <table class="table display data-table text-nowrap" id="teachersDataTable">
                         <thead>
                           <tr>
@@ -386,6 +396,7 @@
         </div>
       </div>
       <div id="sectionAdmin5" style="display: none;">
+        
         <!-- <h3 class="ps-5 text-decoration-underline">List of all Students</h3> -->
         <div class="row">
           <div class="col-1"></div>
@@ -394,10 +405,18 @@
               <div class="card-body">
                 <div class="heading-layout1">
                   <div class="item-title">
-                      <h3>All Students</h3>
+                      <h4>All Students</h4>
                   </div>
                 </div>
-                <div class="table-responsive" id="studentTable">
+                <div class="row d-flex align-items-center">
+                  <div class="col-lg-3 col-12 form-group">
+                      <input type="text" id="searchStd" placeholder="Search by name" class="form-control">
+                  </div>
+                  <!-- <div class="col-lg-2 ms-4 col-12 form-group">
+                      <button type="button" id="btnSearch" class="fw-btn-fill w-75 p-0 pt-2 pb-2 btn-gradient-yellow" style="font-size: 13px;">SEARCH</button>
+                  </div> -->
+                </div>
+                <div class="table-responsive mt-5" id="studentTable">
                     <table class="table display data-table text-nowrap" id="studentsDataTable">
                         <thead>
                           <tr>
