@@ -163,7 +163,7 @@
                 <!--Report Cards Section-->
                 <div id="section3" style="display: none;  text-align: center;">
                     
-                    <div class="card rounded bg-transparent" style="width: 80% !important; margin: auto !important;">
+                    <div class="card rounded bg-light" style="width: 80% !important; margin: auto !important;">
                         <h4 class="card-title pt-4" style="text-decoration: underline;">Grades</h4>
                         <div class="col-sm-12 d-flex flex-row justify-content-center pb-4">
                             <div class="col-xxl-1 col-md-1 col-sm-3 d-flex justify-content-center">
@@ -176,31 +176,34 @@
                                 <select class="select2 form-select m-4" id="term" style="cursor: pointer; width: fit-content;">
                                     <option value="term" selected disabled>Term</option>
                                     <option value="1">1</option>
-                                    <option value="mid">Mid</option>
-                                    <option value="2">2</option>
-                                    <option value="final">Final</option>
+                                    <option value="2">Mid</option>
+                                    <option value="3">2</option>
+                                    <option value="4">Final</option>
                                 </select>
                             </div>
                         </div>
                     
 
-                    <div class="table">
-                        <table class="table table-hover table-bordered" id="tableGrade">
+                    <div class="table pb-4">
+                        <table class="table table-hover bg-white table-bordered" id="tableGrade">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">English /20</th>
-                                <th scope="col">Arabic /20</th>
-                                <th scope="col">Maths /20</th>
-                                <th scope="col">Science /20</th>
-                                <th scope="col">History /20</th>
-                                <th scope="col">Total /100</th>
-                                <th scope="col">Average /20</th>
+                                <th scope="col">English <br> /20</th>
+                                <th scope="col">Arabic <br> /20</th>
+                                <th scope="col">Maths <br> /20</th>
+                                <th scope="col">Science <br> /20</th>
+                                <th scope="col">History <br> /20</th>
+                                <th scope="col">Total <br> /100</th>
+                                <th scope="col">Average <br> /20</th>
                               </tr>
                             </thead>
                             <tbody id="tableGradeBody">
+                                <tr>
+                                    <td colspan="10">No records</td>
+                                </tr>
                             </tbody>
                           </table>
                           <div style="width: 80%; margin: auto;">
@@ -261,7 +264,7 @@
                           <img src="img/content/timetable.png" alt="">
                       </div> -->
                       <div class="table-responsive">
-                          <table class="table table-bordered text-center ">
+                          <table class="table table-bordered text-center scheduleTable ">
                               <thead>
                                   <tr class="bg-light-gray">
                                       <th class="text-uppercase">Time
