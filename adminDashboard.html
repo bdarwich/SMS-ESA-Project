@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Admin Dashboard </title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/adminDashboard.css">
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+	rel=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	type="text/css"
+/>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	src=
+"https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+	type="text/javascript"
+></script>
+<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+  <body>
+    <div class="mysidebar">
+      <div class="logo-details">
+        <!--i class="fa-solid fa-a adminIcon" id="adminIcon"  style="visibility: hidden;"></i-->
+        <i class="fa-solid fa-m" id="adminIcon" style="visibility: hidden;"></i>
+        <span class="logo_name" id="logo_name">MyAdmin </span>
+      </div>
+        <ul class="mynav-links">
+          <li>
+            <a href="#" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+              <i class="bi bi-person-plus-fill"></i>
+              <span class="links_name">Add New User</span> 
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+              <i class="bi bi-plus-lg"></i>
+              <span class="links_name">Add New Class</span> 
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+              <i class="fas fa-chalkboard-user"></i>
+              <span class="links_name">Teachers</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+              <i class="fas fa-user-graduate"></i>
+              <span class="links_name">Students</span>
+            </a>
+          </li>
+        </li>
+          <li class="portal">
+            <a href="#">
+              <i class='bx bx-log-out'></i>
+              <span class="links_name">Go to Portal</span>
+            </a>
+          </li>
+        </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="mysidebar-button">
+          <i class='bx bx-menu mysidebarBtn'></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="profile-details">
+          <div class="dropdown-toggle px-4" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-fill"></i>
+            <span class="admin_name"></span>
+          </div>
+          <ul class="dropdown-menu mt-1" aria-labelledby="dropdownMenuButton">
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#"  >
+                <i class="fa-solid fa-power-off px-2"></i>
+                <span id="logout"> &nbsp; Logout</span> 
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="brdcrumbHeader">
+        <p id="breadcrumb"></p>
+      </div>
+      <div id="sectionAdmin1Cont">
+      <div id="sectionAdmin1" class="px-4 overflow-hidden">
+        <!-- <h2>Dashboard</h2> -->
+        <div class="row ms-2 me-2 m-3">
+          
+        </div>
+        <div class="row justify-content-around ms-2 me-2" style="margin-right: -15px; margin-left: -15px; padding-left: 5px;">
+          <div class="col-xl-3 col-sm-6 col-12">
+              
+                  <div class="row bg-white justify-content-around text-center rounded-3 shadow py-4 my-2 counterCard">
+                    <div class="col-4"><img src="icons/admin/student.png" width="50px" height="50px"></div>  
+                    <div class="col-8">
+                          <div class="item-content">
+                              <div class="item-title">Students</div>
+                              <div class="item-number"><span id="counterStudent"></span></div>
+                          </div>
+                      </div>
+                  </div>
+              
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12">
+              
+                  <div class="row bg-white justify-content-around text-center rounded-3 shadow py-4 my-2 counterCard">
+                    <div class="col-4"><img src="icons/admin/headmaster.png" width="50px" height="50px"></div>  
+                    <div class="col-8">
+                          <div class="item-content">
+                              <div class="item-title">Headmasters</div>
+                              <div class="item-number"><span id="counterHeadmasters"></span></div>
+                          </div>
+                      </div>
+                  </div>
+              
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12">
+              
+                  <div class="row bg-white justify-content-around text-center rounded-3 shadow py-4 my-2 counterCard">
+                    <div class="col-4"><img src="icons/admin/teacher.png" width="50px" height="50px"></div>  
+                    <div class="col-8">
+                          <div class="item-content">
+                              <div class="item-title">Teachers</div>
+                              <div class="item-number"><span id="counterTeachers"></span></div>
+                          </div>
+                      </div>
+                  </div>
+              
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12">
+              <div class="row bg-white justify-content-around text-center rounded-3 shadow py-4 my-2 counterCard">
+                <div class="col-4"><img src="icons/admin/users.png" width="50px" height="50px"></div>  
+                    <div class="col-8">
+                      <div class="item-content">
+                          <div class="item-title">Total Users</div>
+                          <div class="item-number"><span id="counterUsers"></span></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+        
+        
+          <!-- <div class="row m-5">
+            <div class="col-md-6 bg-white rounded-3">
+              <div class="col-md-11 ">
+                
+              </div>
+            </div>
+            <div class="col-md-6 border">
+              <div class="col-md-11 ms-1">
+                <canvas id="genderChart" height="inherit"></canvas>
+              </div>
+            </div>
+          </div> -->
+
+
+          <div class="row mx-4 d-flex">
+            <div class="col-md-6 col-sm-11">
+              <div class="card-body py-4">
+                <canvas id="cycleChart"></canvas>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-11">
+              <div class="card-body py-4">
+                <canvas id="genderChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <footer class="d-flex flex-wrap p-5 mt-5" id="dashboardFooter">
+            <div class="col-md-12 d-flex justify-content-end">
+              <span class="text-dark">&copy; 2021 By Fatima, Bassam & Ali</span>
+            </div>
+          </footer>
+      </div>
+      <!-- <div class="container"> -->
+          
+      
+      <div id="sectionAdmin2" style="display: none;">
+        <div class="card height-auto">
+          <div class="card-body">
+              <div class="heading-layout1">
+                  <div class="item-title">
+                      <h3>Add New User</h3>
+                  </div>                    
+              </div>
+              <div class="d-flex form-group" style="display: flex!important;
+              align-items: center;">
+                  <label>Role </label>
+                  <select class="select2 form-select w-25 m-4" id="role" style="cursor: pointer;">
+                      <option selected disabled value=""style="cursor: pointer;"></option>
+                      <option value="Student">Student</option>
+                      <option value="Teacher">Teacher</option>
+                      <option value="Headmaster">Headmaster</option>
+                      <!-- <option value="Administration Staff">Administration Staff</option> -->
+                  </select>                    
+              </div>
+              <div id="roleForm">
+
+              </div>
+          </div>
+      </div>
+      </div>
+      <div id="sectionAdmin3" style="display: none;">
+        <div class="row">
+          <div class="col-md-4 col-sm-10" style="margin-left: 30px">
+              <div class="align-top">
+                  <div class="card-body">
+                      <div class="heading-layout1">
+                          <div class="item-title">
+                              <h3>Add a New Class</h3>
+                          </div>
+                      </div>
+                      <form class="new-added-form">
+                          <div class="row  flex-column">
+                              
+                              <div class="form-group" style="width: 100%; display: flex; align-items: center;">
+                                  <label style="width:100%">Class </label>
+                                  <select class="form-control" id="newClassName"  style="margin-left:50px;">
+                                      <option value=""></option>
+                                      <option value="Grade 1">One</option>
+                                      <option value="Grade 2">Two</option>
+                                      <option value="Grade 3">Three</option>
+                                      <option value="Grade 4">Four</option>
+                                      <option value="Grade 5">Five</option>
+                                      <option value="Grade 6">Six</option>
+                                      <option value="Grade 7">Seven</option>
+                                      <option value="Grade 8">Eight</option>
+                                      <option value="Grade 9">Nine</option>
+                                      <option value="Grade 10">Ten</option>
+                                      <option value="Grade 11">Eleven</option>
+                                      <option value="Grade 12">Twelve</option>
+                                  </select>
+                              </div>
+                              <div class="form-group" style="width: 100%; display: flex; align-items: center">
+                                <label style="width:100%">Section Name</label>
+                                <select class= "form-control select2" id="newClassSection" style="margin-left:50px">
+                                    <option value=""></option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                </select>
+                            </div>
+                              <div class="col-12 form-group mg-t-8" style="display: flex; justify-content:space-evenly; padding-top:50px !important;">
+                                  <button type="button" id="submitNewClass" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                  <button type="reset" class="btn-fill-lg btn-blue-dark btn-hover-yellow">Reset</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-7 col-sm-10">
+            <div class="align-justify">
+                <div class="card-body">
+                    <div class="heading-layout1">
+                        <div class="item-title">
+                            <h3>All Classes</h3>
+                        </div>
+                    </div>
+                    <form class="mg-b-20">
+                        <!-- <div class="row gutters-8">
+                            <div class="col-lg-4 col-12 form-group">
+                                <input type="text" placeholder="Search by Exam ..." class="form-control">
+                            </div>
+                            <div class="col-lg-3 col-12 form-group">
+                                <input type="text" placeholder="Search by Section ..." class="form-control">
+                            </div>
+                            <div class="col-lg-3 col-12 form-group">
+                                <input type="text" placeholder="dd/mm/yyyy" class="form-control">
+                            </div>
+                            <div class="col-lg-2 col-12 form-group">
+                                <button type="submit"
+                                    class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                            </div>
+                        </div> -->
+                    </form>
+                    <div class="table-responsive text-center">
+                        <table class="table display data-table text-nowrap" id="classesTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <!-- <div class="form-check">
+                                            <input type="checkbox" class="form-check-input checkAll">
+                                            <label class="form-check-label">#0021</label>
+                                        </div> -->ID
+                                    </th>
+                                    <th>Cycle</th>
+                                    <th>Class</th>
+                                    <th>Section</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="classList">  </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div id="sectionAdmin4" style="display: none;">
+        <!-- <h3 class="ps-5 text-decoration-underline">List of all Teachers</h3> -->
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10 text-center">
+            <div class="align-justify">
+              <div class="card-body">
+                <div class="heading-layout1">
+                  <div class="item-title">
+                      <h4>Headmasters</h4>
+                  </div>
+                </div>
+                <div class="table-responsive" id="headmasterTable">
+                    <table class="table display data-table text-nowrap" id="headmastersDataTable">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Password</th>
+                            <th>Name</th>
+                            <th>Cycle</th>
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>PhoneNo</th>
+                            <th>Photo</th>
+                          </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="heading-layout1">
+                  <div class="item-title">
+                      <h4>Teachers</h4>
+                  </div>
+                </div>
+                <div class="table-responsive" id="teacherTable">
+                    <table class="table display data-table text-nowrap" id="teachersDataTable">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Password</th>
+                            <th>Name</th>
+                            <th>Cycle</th>
+                            <th>Class</th>
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>PhoneNo</th>
+                            <th>Photo</th>
+                          </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div id="teachersDataTable"></div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+      <div id="sectionAdmin5" style="display: none;">
+        <!-- <h3 class="ps-5 text-decoration-underline">List of all Students</h3> -->
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10 text-center">
+            <div class="align-justify">
+              <div class="card-body">
+                <div class="heading-layout1">
+                  <div class="item-title">
+                      <h3>All Students</h3>
+                  </div>
+                </div>
+                <div class="table-responsive" id="studentTable">
+                    <table class="table display data-table text-nowrap" id="studentsDataTable">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Password</th>
+                            <th>Name</th>
+                            <th>Cycle</th>
+                            <th>Class</th>
+                            <th>Section</th>
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>PhoneNo</th>
+                            <th>Photo</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div id="studentsDataTable"></div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+    </section>
+    
+
+    <script src="js/user.js"></script>
+    <script src="js/adminDashboard.js"></script>
+    
+    <script src="js/userTables.js"></script>
+    <script src="js/dataTables.js"></script>
+  </body>
+</html>

@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+        <link rel="stylesheet" href="css/portalTeacher.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+        <script type="text/javascript" src="http://mrrio.github.io/jsPDF/dist/jspdf.debug.js"></script>
+        <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script> -->
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+        <title>Teacher Portal</title>
+    </head>
+    <body>
+        <!---->
+        <div class="mysidenav">
+            <ul class="profileTop">
+                <li>
+                    <img id="avatarShow"  src="images/avatar/teacher.png"> <!--onclick="getStudentProfile()"-->
+                </li>
+            </ul>
+
+            <div class="profileCenter">
+                <a href="#" class="mysidenavItems"><img src="icons/portal/Home/home.png"> Home</a>
+                <a href="#" class="disabledTab mysidenavItems" id="messages"><img src="icons/portal/Message/mail (1).png"><span class="itemsTitle">Messages</span></a>
+                <a href="#" class="disabledTab mysidenavItems" id="library"><img src="icons/portal/Library/books (3).png"><span class="itemsTitle">Library</span></a>
+                <a href="#" class="disabledTab mysidenavItems" id="notification"><img src="icons/portal/Notification/notification (3).png"><span class="itemsTitle">Notifications</span></a>
+                <a href="#" class="mysidenavItems"><img src="icons/portal/Homework/homework (1).png"><span class="itemsTitle">Homework</span></a>
+                <a href="#" class="mysidenavItems"><img src="icons/portal/Attendance/checked.png"><span class="itemsTitle">Attendance</span></a>
+                <a href="#" class="mysidenavItems" style="margin-left: -6px;"><img src="icons/portal/Schedule/clock.png"><span class="itemsTitle">Schedule</span></a>
+                <!--a href="#" class="mysidenavItems"><img src="icons/portal/Events/calendar (2).png">Events</a-->
+                <a href="#" id="logout"><img src="icons/portal/Logout/turn-off.png"><span class="itemsTitle">Logout</span></a>
+            </div>
+        </div>
+
+        <!---->
+        <div class="mymain">
+
+            <!---->
+            <header class="myheader">
+                <div class="headerLeft">
+                   <p id="welcomeHeader">Welcome back! <span id="welcomeUser" style="font-weight: bold;"></span><span class="wave">👋</span></p>
+                   <p id="breadcrumbHeader"></p>
+                </div>
+            </header>
+
+            <!--Main-->
+            <div class="mainContent">
+                <!--iframe src="evaluation.html" name="iframe_a" width="80%" title="Iframe" style="position: absolute; height: 100%; border: none; padding-top: 25px; overflow:scroll;"></iframe-->
+                <div id="section1">
+                    <div id="section1Flexed">
+                        <div class="colonne1">
+                            <div class="slideshow-container">
+                                <div class="mySlides fade">
+                                    <div class="myFlex">
+                                        <img src="images/slideshow/library.jpg">
+                                    </div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="myFlex">
+                                        <img src="images/slideshow/laboratory.jpg">
+                                    </div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="myFlex">
+                                        <img src="images/slideshow/cafeteria.jpg">
+                                    </div>
+                                </div>
+                                <div class="myFlex">
+                                  <div class="textLarge">
+                                    <h2 style="text-align: left;">Lorem ipsum</h2>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et tortor consequat id porta nibh venenatis cras. Eget arcu dictum varius duis at consectetur. In mollis nunc sed id semper risus in hendrerit. Bibendum neque egestas congue quisque. Tincidunt lobortis feugiat vivamus at. Hac habitasse platea dictumst quisque. Volutpat consequat mauris nunc congue. Nisi vitae suscipit tellus mauris a diam maecenas sed.
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colonne2">
+                            <div class="rowEnonce">
+                                <h2>ANNOUNCEMENTS</h2>
+                                <ul class="ulEnonceEvent">
+                                    <li class="listEnonce">
+                                        <span class="dateEnonce">NOV 18th, 2021</span>
+                                        <h3 class="titreEnonce">Independence Day</h3>
+                                        <p class="paragEnonce">In the occasion of the independence day, school will be closed on Monday 22nd.</p>
+                                    </li>
+                                    <li class="listEnonce">
+                                        <span class="dateEnonce">OCT 14th, 2021</span>
+                                        <h3 class="titreEnonce">Off day</h3>
+                                        <p class="paragEnonce">Tomorrow there will be no classes due to public mourning for the lives of those killed in violence in Beirut today.</p>
+                                    </li>
+                                    <li class="listEnonce">
+                                        <span class="dateEnonce">SEP 10th, 2021</span>
+                                        <h3 class="titreEnonce">Welcome back to school!! </h3>
+                                        <p class="paragEnonce">Welcome back from the break! Let's open the dusty textbooks and start our journey! Best wishes for the new school year! </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="rowEvent">
+                                <h2 id="eventSectionTrigger">UPCOMING EVENTS</h2>
+                                <ul class="ulEnonceEvent">
+                                    <li class="listEvents">
+                                        <div class="dateEventsDiv">
+                                            <span class="dateEvents">
+                                                NOV <br> 23
+                                            </span>
+                                        </div>
+                                        <div class="titreEventsDiv">
+                                            <h3 class="titleEvents">
+                                                Lebanese Red Cross Session: First Aid Kit
+                                            </h3>
+                                            <p class="timeEvents">
+                                                At 8:30 AM
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="listEvents">
+                                        <div class="dateEventsDiv">
+                                            <span class="dateEvents">
+                                                NOV <br> 26
+                                            </span>
+                                        </div>
+                                        <div class="titreEventsDiv">
+                                            <h3 class="titleEvents">
+                                                Kindergarten: Louna Show
+                                            </h3>
+                                            <p class="timeEvents">
+                                                At 11:00 AM
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="listEvents">
+                                        <div class="dateEventsDiv">
+                                            <span class="dateEvents">
+                                                DEC <br> 02
+                                            </span>
+                                        </div>
+                                        <div class="titreEventsDiv">
+                                            <h3 class="titleEvents">
+                                                Elderly Center Visit at Deir Rafka
+                                            </h3>
+                                            <p class="timeEvents">
+                                                At 9:00 AM
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+                    </div>
+                </div>
+
+                <!--Messages Section-->
+                <div id="section2" style="display: none;">
+                    <h2>MESSAGES</h2>
+                </div>
+
+                <!--Library Section-->
+                <div id="section3" style="display: none;">
+                    <h2>LIBRARY</h2>
+                </div>
+
+                <!--Announcements Section-->
+                <div id="section4" style="display: none;">
+                    <h2>NOTIFICATIONS</h2>
+                </div>
+
+
+                <!--Announcements Section-->
+                <div id="section5" style="display: none;">
+                    <h2>HOMEWORK</h2>
+                    <div id="holder" class="row" ></div>
+
+
+
+                      <script type="text/tmpl" id="tmpl">
+                        {{
+                        var date = date || new Date(),
+                            month = date.getMonth(),
+                            year = date.getFullYear(),
+                            first = new Date(year, month, 1),
+                            last = new Date(year, month + 1, 0),
+                            startingDay = first.getDay(),
+                            thedate = new Date(year, month, 1 - startingDay),
+                            dayclass = lastmonthcss,
+                            today = new Date(),
+                            i, j;
+
+                        }}
+                        <table class="calendar-table table table-condensed table-tight">
+                          <thead>
+                            <tr>
+                              <td colspan="7" style="text-align: center">
+                                <table style="white-space: nowrap; width: 100%">
+                                  <tr>
+                                    <td style="text-align: left;">
+                                      <span class="btn-group">
+                                        <button class="js-cal-prev btn btn-light"><</button>
+                                        <button class="js-cal-next btn btn-light">></button>
+                                      </span>
+                                      <button class="js-cal-option calendarbtns btn btn-light {{: first.toDateInt() <= today.toDateInt() && today.toDateInt() <= last.toDateInt() ? 'active':'' }}" data-date="{{: today.toISOString()}}" data-mode="day">{{: todayname }}</button>
+                                    </td>
+                                   <td colspan="7" style="text-align: right">
+
+
+
+
+                                    <div class="container mt-3">
+
+                                      <button type="button" class="btn btn-light calendarbtns" data-bs-toggle="modal" data-bs-target="#myModal">
+                                        Add New
+                                      </button>
+                                    </div>
+
+
+
+
+
+                                    <!-- The Modal -->
+                                    <div class="modal" id="myModal">
+                                      <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+
+                                          <!-- Modal Header -->
+                                          <div class="modal-header" id="mymodal-header">
+                                            <h4 class="modal-title">Add Task</h4>
+                                            <button type="button" class="btn-close" id="btnClose" data-bs-dismiss="modal"></button>
+                                          </div>
+
+                                          <!-- Modal body -->
+                                          <div class="modal-body">
+                                            <div class="row">
+                                              <div class="col-6">
+                                                <input type="date" class="form-control">
+                                              </div>
+                                              <div class="col-6">
+                                                <select class="form-control">
+                                                  <option></option>
+                                                  <option>Homework</option>
+                                                  <option>Exam</option>
+                                                </select>
+                                              </div>
+                                            </div><br>
+                                            <div class="row">
+                                              <div class="col-6">
+                                                <select class="form-control">
+                                                  <option></option>
+                                                  <option>Grade# 1</option>
+                                                  <option>Grade# 2</option>
+                                                  <option>Grade# 3</option>
+                                                  <option>Grade# 4</option>
+                                                  <option>Grade# 5</option>
+                                                  <option>Grade# 6</option>
+                                                  <option>Grade# 7</option>
+                                                  <option>Grade# 8</option>
+                                                  <option>Grade# 9</option>
+                                                  <option>Grade# 10</option>
+                                                  <option>Grade# 11</option>
+                                                  <option>Grade# 12</option>
+                                                </select>
+                                              </div>
+                                              <div class="col-6">
+                                                <input type="file" class="form-control"/>
+                                              </div>
+                                            </div>
+                                            <hr>
+                                              <h4 align="left">Description</h4>
+                                              <textarea class="form-control" id="message-text"></textarea>
+                                          </div>
+                                          <!-- Modal footer -->
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                   </td>
+                                  </tr>
+                                </table>
+
+                              </td>
+                            </tr>
+                          </thead>
+                          {{ if (mode ==='year') {
+                            month = 0;
+                          }}
+                          <tbody>
+                            {{ for (j = 0; j < 3; j++) { }}
+                            <tr>
+                              {{ for (i = 0; i < 4; i++) { }}
+
+                              {{ } }}
+                            </tr>
+                            {{ } }}
+                          </tbody>
+                          {{ } }}
+                          {{ if (mode ==='month' || mode ==='week') { }}
+
+                          <tbody>
+                            {{ for (j = 0; j < 6 && (j < 1 || mode === 'month'); j++) { }}
+                            <tr>
+                              {{ for (i = 0; i < 7; i++) { }}
+                              {{ if (thedate > last) { dayclass = daycss; } else if (thedate >= first) { dayclass = daycss; } }}
+                              <td class="calendar-day {{: dayclass }} {{: thedate.toDateCssClass() }} {{: date.toDateCssClass() === thedate.toDateCssClass() ? 'selected':'' }} {{: daycss[i] }} js-cal-option" data-date="{{: thedate.toISOString() }}">
+                                <div class="date">{{: thedate.getDate() }}</div>
+                                {{ thedate.setDate(thedate.getDate() + 1);}}
+                              </td>
+                              {{ } }}
+                            </tr>
+                            {{ } }}
+                          </tbody>
+                          {{ } }}
+                          {{ if (mode ==='day') { }}
+                          <tbody>
+                            <tr>
+                              <td colspan="7">
+                                <table class="table table-striped table-condensed table-tight-vert" >
+                                  <thead>
+                                    <tr>
+                                      <th class="form-date text-center">{{: date.toDateString() }}</th>
+                                    </tr>
+                                  </thead>
+
+                                  <tbody>
+
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                          {{ } }}
+                        </table>
+                      </script>
+
+                      <div class="accordion" id="accordionExample" style="width:77%; margin-left: auto; margin-right: auto">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Grade #1
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <strong>Grade 1</strong>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Accordion Item #2
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Accordion Item #3
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div id="section6" style="display: none;">
+                  <h2>ATTENDANCE</h2>
+                  <div class="container attendance-container w-75">
+                    <div class="row">
+                      <div class="col-md-2  col-sm-12 d-flex flex-column  mt-4" >
+                        <div class="col-12 d-flex flex-row" style="align-items: center;">
+                          <div class="col-md-9  col-sm-6" style="display: flex; align-items: flex-end;">
+                              <select class="form-control selectClassAttendance">
+                                <option value="" selected disabled>Class</option>
+                                <option value="1">Grade 1</option>
+                                <option value="2">Grade 2</option>
+                                <option value="3">Grade 3</option>
+                                <option value="4">Grade 4</option>
+                                <option value="5">Grade 5</option>
+                                <option value="6">Grade 6</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                                <option value="12">Grade 12</option>
+                              </select>
+                            </div>
+                            <!-- <div class="col-md-6  col-sm-6" style="display: flex;
+                            align-items: flex-end;
+                            justify-content: center;">&nbsp;
+                              <select class="form-control w-75 selectSectionAttendance">
+                                <option value="" selected disabled>Section</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                              </select>
+                            </div> -->
+                          </div>
+
+                        <div class="col-12 fs-6 mt-4 w-75">
+                          <div class="alert alert-warning" id="paraTotal">Total: </div>
+                          <div class="alert alert-warning" id="paraPresent">Present: </div>
+                          <div class="alert alert-warning" id="paraAbsent">Absent: </div>
+                        </div>
+                      </div>
+                      <div class="col-md-7 col-sm-12">
+                        <div class="table-responsive mt-4 fs-6">
+                          <table class="table" id="tableAttendance" style="color: #2E363F !important;">
+                            <thead class="border border-white">
+                              <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th class="text-right">Present</th>
+                                <th class="text-right">Absent</th>
+                              </tr>
+                            </thead>
+                            <tbody id="attendanceBody">
+
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-12 fs-6 mt-4" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div class="card cardAbsent">
+                          <div class="card-header bg-danger text-white">
+                            Absent
+                          </div>
+                          <ul class="list-group list-group-flush" id="list-absent">
+                            <!-- <li class="list-group-item">Fatima</li> -->
+                          </ul>
+                        </div>
+                        <div class="col-12 mt-4">
+                          <input type="button" class="btn btn-outline-dark  float-end" value="Submit" id="submitAttendance" onclick="submitAttendance()">
+                          <!-- <input type="button" class="btn btn-outline-dark  float-end" value="Submitt" id="submitAttendance2" onclick="submitAttendance2()"> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Schedule Section-->
+                <div id="section7" style="display: none;">
+                    <h2>SCHEDULE</h2>
+                    <div class="container tableSchedule pt-5">
+                      <!-- <div class="timetable-img text-center">
+                          <img src="img/content/timetable.png" alt="">
+                      </div> -->
+                      <div class="table-responsive">
+                          <table class="table table-bordered text-center ">
+                              <thead>
+                                  <tr class="bg-light-gray">
+                                      <th class="text-uppercase">Time
+                                      </th>
+                                      <th class="text-uppercase">Monday</th>
+                                      <th class="text-uppercase">Tuesday</th>
+                                      <th class="text-uppercase">Wednesday</th>
+                                      <th class="text-uppercase">Thursday</th>
+                                      <th class="text-uppercase">Friday</th>
+                                      <th class="text-uppercase">Saturday</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td class="align-middle">08:00am</td>
+                                      <td>
+                                          <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Dance</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                      </td>
+
+                                      <td>
+                                          <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td class="align-middle">09:00am</td>
+                                      <td>
+                                          <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                      </td>
+                                      <td class="bg-light-gray">
+
+                                      </td>
+                                      <td>
+                                          <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                      </td>
+                                      <td class="bg-light-gray">
+
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td class="align-middle">10:00am</td>
+                                      <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td class="align-middle">11:00pm</td>
+                                      <td class="bg-light-gray">
+
+                                      </td>
+                                      <td>
+                                          <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
+                                         </td>
+                                      <td>
+                                          <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                      </td>
+                                      <td class="bg-light-gray">
+
+                                      </td>
+                                      <td>
+                                          <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td class="align-middle">12:00pm</td>
+                                      <td>
+                                          <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                      </td>
+                                      <td class="bg-light-gray">
+
+                                      </td>
+                                      <td>
+                                          <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                      </td>
+                                      <td>
+                                          <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                </div>
+
+                <!--Events Section-->
+                <div id="sectionEvents" style="display: none;">
+                    <h2>UPCOMING EVENTS & ACTIVITIES</h2>
+
+                    <div class="events-main">
+
+                        <div class="events-container">
+                        <div class="rowImg" style='background-image: url("images/events/redCross.jpg");'></div>
+                        <div class="rowDes">
+                            <div class="col-3">
+                            <span class="month"> NOV </span>
+
+                            <span class="day"> 23 </span>
+                            </div>
+
+                            <div class="col-9">
+                            <div class="row">
+                                <a href="#" target="_blank">
+                                <h3>
+                                    Lebanese Red Cross Session: First Aid Kit
+                                </h3>
+                                </a>
+                            </div>
+                            <div class="rowLoc">School Building - All cycles included</div>
+                            <div class="rowTime">Tue Nov 23 2021 at 08:30 pm</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="events-container">
+                        <div class="rowImg" style='background-image: url("images/events/theatre.jpg");'></div>
+                        <div class="rowDes">
+                            <div class="col-3">
+                            <span class="month"> NOV </span>
+
+                            <span class="day"> 26 </span>
+                            </div>
+
+                            <div class="col-9">
+                            <div class="row">
+                                <a href="#" target="_blank">
+                                <h3>
+                                    Kindergarten: Louna Show
+                                </h3>
+                                </a>
+                            </div>
+                            <div class="rowLoc">Theatre Athenee - Jounieh</div>
+                            <div class="rowTime">Fri Nov 26 2021 at 08:00 pm</div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="events-container">
+                        <div class="rowImg" style='background-image: url("images/events/elderly.png");'></div>
+                        <div class="rowDes">
+                            <div class="col-3">
+                            <span class="month"> DEC </span>
+
+                            <span class="day"> 2 </span>
+                            </div>
+
+                            <div class="col-9">
+                            <div class="row">
+                                <a href="#" target="_blank">
+                                <h3>
+                                    Cycle two: Elderly Center Visit at Deir Rafka
+                                </h3>
+                                </a>
+                            </div>
+                            <div class="rowLoc">Jrebta - Deir Mar Youssef</div>
+                            <div class="rowTime">Thu Dec 2 2021 at 08:00 pm</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="events-container">
+                        <div class="rowImg"style='background-image: url("images/events/zoo.jpg");'></div>
+                        <div class="rowDes">
+                            <div class="col-3">
+                            <span class="month"> DEC </span>
+
+                            <span class="day"> 18 </span>
+                            </div>
+
+                            <div class="col-9">
+                            <div class="row">
+                                <a href="#" target="_blank">
+                                <h3>
+                                    Cycle 3: Trip to the zoo
+                                </h3>
+                                </a>
+                            </div>
+                            <div class="rowLoc">Animal City Lebanon - Nahr El Kalb</div>
+                            <div class="rowTime">Fri Dec 18 2021 at 08:00 pm</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="events-container">
+                            <div class="rowImg" style='background-image: url("images/events/elderly.png");'></div>
+                            <div class="rowDes">
+                                <div class="col-3">
+                                <span class="month"> DEC </span>
+
+                                <span class="day"> 2 </span>
+                                </div>
+
+                                <div class="col-9">
+                                <div class="row">
+                                    <a href="#" target="_blank">
+                                    <h3>
+                                        Cycle two: Elderly Center Visit at Deir Rafka
+                                    </h3>
+                                    </a>
+                                </div>
+                                <div class="rowLoc">Jrebta - Deir Mar Youssef</div>
+                                <div class="rowTime">Thu Dec 2 2021 at 08:00 pm</div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="events-container">
+                            <div class="rowImg"style='background-image: url("images/events/zoo.jpg");'></div>
+                            <div class="rowDes">
+                                <div class="col-3">
+                                <span class="month"> DEC </span>
+
+                                <span class="day"> 18 </span>
+                                </div>
+
+                                <div class="col-9">
+                                <div class="row">
+                                    <a href="#" target="_blank">
+                                    <h3>
+                                        Cycle 3: Trip to the zoo
+                                    </h3>
+                                    </a>
+                                </div>
+                                <div class="rowLoc">Animal City Lebanon - Nahr El Kalb</div>
+                                <div class="rowTime">Fri Dec 18 2021 at 08:00 pm</div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- <div id="sectionStudentProfile" style="display: none;"> -->
+                    <!--p id="breadcrumbHeader"></p-->
+                    <!-- <div class="popup" id="popup1" style="display: none;">
+                        <a href="#" class="closeProfile">&times;</a> -->
+                        <div class="marginProfile">
+                            <div class="studentCard popup" id="popup1" style="display: none;">
+                                <div style="text-align: center;">
+                                    <img id="avatarHide" src="images/avatar/teacher.png" style="margin-bottom: 50px;">
+                                </div>
+                                <ul style="margin-top: 30px;" >
+                                  <li class="teacherProfileListTitle">ID: <span class="teacherProfileList"></span> </li>
+                                  <li class="teacherProfileListTitle">Full Name: <span class="teacherProfileList"></span></li>
+                                  <li class="teacherProfileListTitle">Date of Birth: <span class="teacherProfileList"></span></li>
+                                  <li class="teacherProfileListTitle">Email: <span class="teacherProfileList"></span></li>
+                                  <li class="teacherProfileListTitle">Phone: <span class="teacherProfileList"></span></li>
+                                  <li class="teacherProfileListTitle">Cycle: <span class="teacherProfileList"></span></li>
+                                  <li class="teacherProfileListTitle">Classes: <span class="teacherProfileList"></span></li>
+                              </ul>
+                            </div>
+                        </div>
+
+                <!-- </div></div> -->
+            </div>
+        </div>
+
+        <script src="js/portalTeacher.js"></script>
+        <script src="js/calendar.js"></script>
+    </body>
+</html>
