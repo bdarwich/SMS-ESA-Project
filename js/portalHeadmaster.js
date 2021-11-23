@@ -1,6 +1,6 @@
 let listItems = document.getElementsByClassName('mysidenavItems');
 let eventSectionTrigger = document.getElementById('eventSectionTrigger');
-let breadcrumb = '<a href="portalHeadmaster.html">Home</a> /<span class="secondBreadcrumbTitle">';
+let breadcrumb = '<a href="portalHeadmaster.html"><span id="a"> Home</span></a> /<span class="secondBreadcrumbTitle">';
 
 // Disable Sections
 let message = document.getElementById('messages');
@@ -205,8 +205,10 @@ document.querySelector('#term').addEventListener('change', (e)=>{   //save the c
         let students = JSON.parse(localStorage.getItem('studentsArray'));
         let selectedClass = localStorage.getItem('class');
         studentsDataTable.innerHTML = ` `;
+        let count = 0;
         for(let i=0; i<students.length; i++){
             if((('Grade ' + students[i]['clas']== selectedClass) && ((document.querySelector('#term').value) !='term')) ){
+                count++;
                 studentsDataTable.innerHTML += `<tr>
                                     <td scope='row'>${i+1}</td>
                                     <td>${students[i]['id']}</td>
@@ -222,7 +224,12 @@ document.querySelector('#term').addEventListener('change', (e)=>{   //save the c
             } else {
                 studentsDataTable.innerHTML = ` `;
             }
-        }    
+        }  
+        if(count==0){
+            studentsDataTable.innerHTML = `<tr>
+            <td colspan="10">No records</td>
+        </tr> `;
+        }  
     } 
 
     document.querySelector('#saveGrades').style.display = 'block';
@@ -236,80 +243,41 @@ document.querySelector('#term').addEventListener('change', (e)=>{   //save the c
     }))
 })
 
-
-
-
 //save students grades
 function saveGrades(){
     var sum = 0;
     let grades = document.getElementsByClassName('grades');
     let rows = studentsDataTable.rows.length;
-    let s = studentsDataTable.rows[2].firstChild.nextSibling.textContent; // s-1
+    // let s = studentsDataTable.rows[2].firstChild.nextSibling.textContent; // s-1
+    // alert(rows);
     let len = studentsDataTable.rows[2].cells.length;
     
-    for(let j=2; j<rows ; j++){
-        for(let i=2; i<len; i++){
+    if((localStorage.getItem('gradesArray'))==null){
+        localStorage.setItem('gradesArray','[]');
+    }   
+    let  gradesArray = JSON.parse(localStorage.getItem('gradesArray'));
+
+    for(let j=0; j<rows ; j++){
+        let grades = [];
+        for(let i=3; i<len-2; i++){
             sum += Number((studentsDataTable.rows[j].cells[i].firstChild).value);
+            grades.push(Number((studentsDataTable.rows[j].cells[i].firstChild).value));
         }
+        let average = parseFloat((sum*20)/100);
+        grades.push(sum);
+        grades.push(average);
+        let id = studentsDataTable.rows[j].cells[1].firstChild.textContent;
+        let term =localStorage.getItem('term');
+        let grade = {id:id, term:term, grades:grades}
+        gradesArray.push(grade);
         
-        studentsDataTable.rows[j].cells[len-1].firstChild.value = sum;    
+        studentsDataTable.rows[j].cells[len-2].firstChild.value = sum;   
+        studentsDataTable.rows[j].cells[len-1].firstChild.value = average;
         sum = 0;    
     }
-    //alert();
-        
-    if(localStorage.getItem('studentsArray')!=null){
-        let students = JSON.parse(localStorage.getItem('studentsArray'));
-        
-        
-        //alert(gradesObj.grade);
-        for(let i=0; i<students.length; i++){
-            
-            const gradesObj = {};
-            gradesObj.name = 'English';
-            gradesObj.grade = (studentsDataTable.rows[i+2].cells[len-1].firstChild).value;
-
-            if(students[i].hasOwnProperty('grades')){
-                students[i].grades.push(gradesObj);
-                alert('array yes');
-            } else {
-                students[i].grades = [];
-                students[i].grades.push(gradesObj);
-                alert('array no');
-                alert(students[i].grades[0].grade);
-            }
-            
-            //delete students[i].grades;
-            localStorage.setItem('studentsArray', JSON.stringify(students));
-        }   
-    }
     
-    // if(localStorage.getItem('studentsArray')!=null){
-    //     let students = JSON.parse(localStorage.getItem('studentsArray'));
-        
-        
-    //     //alert(gradesObj.grade);
-    //     for(let i=0; i<students.length; i++){
-    //         if(students[i].hasOwnProperty('grades')){
-    //             alert(students[i].grades[0].grade);
-    //         } 
-    //     }   
-    // }
+    console.log(gradesArray);
+    
+    localStorage.setItem('gradesArray', JSON.stringify(gradesArray));
+    alert('Grades added successfully!!');   
 }
-
-
-// //generate table of grades based on dropdown 
-// document.querySelector('#classes').addEventListener('change', e=>{
-//     alert(e.target.value);
-// })
-
-
-// if(localStorage.getItem('studentsArray')!=null){
-//     let students = JSON.parse(localStorage.getItem('studentsArray'));
-    
-    
-//     //alert(gradesObj.grade);
-//     for(let i=0; i<students.length; i++){
-//         delete students[i]['grades'];
-//     }
-//     localStorage.setItem('studentsArray', JSON.stringify(students));
-// }
