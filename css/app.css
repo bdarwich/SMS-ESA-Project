@@ -8,13 +8,13 @@
 
 body {
 	min-height: 100vh;
-	background-image: linear-gradient(120deg, #ffffff, #B4975A);
+	background-image: linear-gradient(120deg, #2e363f59, #b4985a8f);
     display: flex;
     align-items: center;
 }
 
 .login-form {
-	width: 360px;
+	width:50%;
 	height: auto;
 	background: #f1f1f1;
 	padding: 10px 40px 80px 40px;
@@ -27,8 +27,9 @@ body {
 }
 
 .login-form h1 {
-    color: rgb(240, 231, 215);
-    font-family: comic sans ms;
+    /* color: rgb(240, 231, 215); */
+	color: #2E363F;
+    font-family: 'Segoe UI Semibold';
     font-size: 40px;
     text-shadow: -1px -1px 0 #2E363F, 1px -1px 0 #2E363F, -1px 1px 0 #2E363F, 1px 1px 0 #2E363F;
 	text-align: center;
@@ -120,7 +121,8 @@ body {
 	height: 50px;
 	border: none;
     margin: auto;
-	background: linear-gradient(290deg, #B4975A, #B4975A, #B4975A);
+	background-color: #2e363f52;
+	/* background: linear-gradient(290deg, #B4975A, #B4975A, #B4975A); */
     border-radius: 10px;
 	background-size: 200%;
 	color: #fff;
@@ -134,6 +136,7 @@ body {
 #loginbtn:hover{
     transform: scale(1.05);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background-color: #2e363f;
 }
 
 #loginbtn:hover {
@@ -145,7 +148,7 @@ body {
 }
 
 .cap{
-    color: #2E363F;
+    color: #B4975A;
     font-size: 100px;
    margin-left: auto;
     margin-right: auto;
