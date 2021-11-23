@@ -63,3 +63,6 @@ function addTeacherToTable(){
         }    
     }
 }
+addStudentToTable();
+addHeadmasterToTable();
+addTeacherToTable();
