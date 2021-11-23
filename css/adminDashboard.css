@@ -1,0 +1,554 @@
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  overflow-y:auto;
+  overflow-x: hidden;
+}
+
+body > div > ul{
+  padding-left: 0 !important;
+}
+
+td{
+  vertical-align: middle !important;
+}
+
+.mysidebar{
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #2E363F;
+  transition: all 0.5s ease;
+}
+.mysidebar.active{
+  width: 60px;
+}
+.mysidebar .logo-details{
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.mysidebar .logo-details i{
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 60px;
+  text-align: center
+}
+.mysidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.mysidebar .mynav-links{
+  margin-top: 10px;
+}
+.mysidebar .mynav-links li{
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+.mysidebar .mynav-links li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.mysidebar .mynav-links li a.active{
+  background: #B4975A;
+}
+.mysidebar .mynav-links li a:hover{
+  background: #B4975A;
+}
+.mysidebar .mynav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+.mysidebar .mynav-links li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.mysidebar .mynav-links .portal{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.home-section{
+  position: relative;
+  background: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+.mysidebar.active ~ .home-section{
+  width: calc(100% - 60px);
+  left: 60px;
+}
+.home-section nav{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.mysidebar.active ~ .home-section nav{
+  left: 60px;
+  width: calc(100% - 60px);
+}
+.home-section nav .mysidebar-button{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #B4975A;
+  cursor: pointer;
+}
+
+nav .mysidebar-button i{
+  font-size: 35px;
+  margin-right: 10px;
+  color: #B4975A;
+}
+
+
+.home-section nav .profile-details{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  cursor: pointer;
+  
+}
+
+nav .profile-details .admin_name{
+  font-size: 15px;
+  font-weight: 500;
+  color: #B4975A;
+  margin: 0 10px;
+  white-space: wrap;
+}
+
+@media screen and (max-width: 700px){
+  nav .profile-details> .bi{
+    display: flex;
+    padding-right: 5px;
+  }
+}
+
+nav .profile-details> .bx{
+  font-size: 25px;
+  color: #B4975A;
+}
+
+nav .profile-details> .bi{
+  font-size: 25px;
+  color: #B4975A;
+  padding-left: 20px;
+}
+
+.home-section .home-content{
+  position: relative;
+  padding-top: 104px;
+}
+
+/* Responsive Media Query */
+@media (max-width: 1240px) {
+  .mysidebar{
+    width: 60px;
+  }
+  .mysidebar.active{
+    width: 220px;
+  }
+  .home-section{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .mysidebar.active ~ .home-section{
+    overflow: hidden;
+    left: 220px;
+  }
+  .home-section nav{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .mysidebar.active ~ .home-section nav{
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  nav .mysidebar-button .dashboard,
+  nav .profile-details .admin_name{
+    display: none;
+  }
+  nav .profile-details #logout{
+    visibility: hidden;
+    flex-wrap: nowrap;
+  }
+  nav .profile-details .dropdown-menu {
+    padding-left: 0px !important;
+    width: 70px !important; min-width: 10px !important
+  }
+  .home-section nav .profile-details{
+    height: 50px;
+    min-width: 40px;
+  }
+  
+}
+@media (max-width: 550px) {
+  
+  .mysidebar.active ~ .home-section nav .profile-details{
+    display: none;
+  }
+}
+
+/********************** Dashboard **********************/
+.row.gutters-20 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.counterCard:hover{
+  transform: scale(1.01, 1.01);
+}
+
+.dashboardFooter{
+  bottom: 0 !important;
+}
+
+
+/********************** Main Content CSS ( new ) **********************/
+.brdcrumbHeader{
+  padding-top: 65px;
+  margin-left: 25px;
+  font-style: italic;
+  color: #5a5f6e;
+}
+
+.brdcrumbHeader #breadcrumb a{
+  text-decoration: none;
+  color: #5a5f6e;
+}
+
+.dashboard a:hover{
+  color: #061533 !important;
+  font-size: 25px !important;
+}
+
+.home-section h2{
+  margin-left: 20px;
+}
+
+.secondBreadcrumbTitle{
+  color: #B4975A;
+}
+
+/************Section Add New Class************/
+.sectionAdmin1{
+  display: flex;
+  flex-direction: row;
+}
+
+.form-group{
+  padding-top: 20px !important;
+}
+.btn-gradient-yellow{
+  background-color: #B4975A !important;
+  color: #fff !important;
+  display: inline-block !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  padding: 12px 45px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease-out !important;
+}
+.btn-blue-dark{
+  background-color:  #2E363F !important;
+  color: #fff !important;
+  display: inline-block !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  padding: 12px 45px !important;
+  margin-left: 20px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease-out !important;
+}
+.card {
+  padding-bottom: 30px !important;
+  border: none!important;
+  height: 100%!important;
+  width: 70%!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  background-color: initial!important;
+}
+.card-body {
+  padding: 15px 30px 30px!important;
+  background-color: #ffffff!important;
+  border-radius: 4px!important;
+  box-shadow: 10px 0px 29px 10px rgb(229 229 229 / 75%)!important;
+  margin-top: 50px!important;
+}
+.card-body:hover{
+  transform: scale(1.05,1.05);
+}
+.form-group .form-control {
+  height: 45px!important;
+  background-color: #f8f8f8!important;
+  font-size: 14px!important;
+  color: #111111!important;
+  border-radius: 4px!important;
+  border: none!important;
+  padding: 5px 15px!important;
+}
+.form-group .form-control:focus {
+  outline: none!important;
+  box-shadow: none!important;
+  border: #111111!important;
+}
+.select2 {
+  background-color: #F8F8F8!important;
+  border: none!important;
+  padding-left: 20px!important;
+  padding-right: 30px!important;
+  font-size: 15px!important;
+  height: 45px!important;
+}
+.reqFields{
+  color: brown;
+}
+.heading-layout1 {
+display: flex!important;
+justify-content: space-between!important;
+align-items: center!important;
+background-color: transparent!important;
+border: none!important;
+margin-bottom: 12px!important;
+}
+.heading-layout1 .item-title h3 {
+color: #111111!important;
+font-weight: 500!important;
+margin-bottom: 0!important;
+}
+.heading-layout1 .dropdown .dropdown-toggle {
+color: #bcbcbc!important;
+font-size: 36px!important;
+display: inline-block!important;
+line-height: 1!important;
+padding-bottom: 15px!important;
+position: relative!important;
+right: -10px!important;
+}
+.heading-layout1 .dropdown .dropdown-toggle:after {
+border: none!important;
+}
+.heading-layout1 .dropdown .dropdown-menu {
+border: none!important;
+padding: 15px 0 18px!important;
+}
+.heading-layout1 .dropdown .dropdown-menu .dropdown-item {
+font-size: 15px!important;
+padding: 7px 20px!important;
+}
+.heading-layout1 .dropdown .dropdown-menu .dropdown-item i {
+margin-right: 14px!important;
+width: 22px!important;
+}
+
+.removeItem{
+  color: brown;
+  cursor: pointer;
+}
+
+/************Section Add New User************/
+
+.sectionAdmin2 .card {
+  padding-bottom: 30px!important;
+  border: none!important;
+  height: 100%!important;
+  width: 70%!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  background-color: initial!important;
+}
+.sectionAdmin2 .card-body {
+  padding: 15px 30px 30px!important;
+  background-color: #ffffff!important;
+  border-radius: 4px!important;
+  box-shadow: 10px 0px 29px 10px rgb(229 229 229 / 75%)!important;
+  margin-top: 50px!important;
+}
+
+.sectionAdmin2 .card-body .form-group .form-control {
+  height: 45px!important;
+  background-color: #f8f8f8!important;
+  font-size: 14px!important;
+  color: #111111!important;
+  border-radius: 4px!important;
+  border: none!important;
+  padding: 5px 15px!important;
+  cursor: pointer;
+}
+.sectionAdmin2 .card-body .form-group .form-control:focus {
+  outline: none!important;
+  box-shadow: none!important;
+  border: none!important;
+}
+.sectionAdmin2 .card-body .form-group .select2 {
+  background-color: #F8F8F8!important;
+  border: none!important;
+  padding-left: 20px!important;
+  padding-right: 30px!important;
+  font-size: 15px!important;
+  height: 45px!important;
+}
+.reqFields{
+  color: brown;
+}
+
+#classesTable tr:hover{
+  background-color: #0515250e;
+  color: #2E363F;
+}
+
+#classesTable thead tr:hover{
+  background-color: transparent;
+  color: black;
+}
+
+#classesCheckboxes .form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+  color: #2E363F  !important;
+}
+
+.form-check-input.is-valid:checked, .was-validated .form-check-input:valid:checked {
+  background-color: #2E363F  !important;
+}
+
+.form-check-input.is-valid, .was-validated .form-check-input:valid {
+  border-color: #2E363F !important;
+}
+
+/************Student Table************/
+#studentTable{
+  display: block;
+}
+#studentTable::-webkit-scrollbar {
+  width: 1px; 
+  height: 5px;
+}
+#studentTable::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px; 
+}
+#studentTable::-webkit-scrollbar-thumb {
+  background: #B4975A; 
+  border-radius: 50px; 
+}
+#studentTable::-webkit-scrollbar-thumb:hover {
+  background: #B4975A; 
+}
+#studentTable tr:hover{
+  background-color: #0515250e;
+  color: #2E363F;
+}
+
+/************Headmaster Table************/
+
+.card-body h4 {
+  color: #B4975A !important; 
+}
+
+#teachersDataTable tr:hover, #headmastersDataTable tr:hover{
+  background-color: #0515250e;
+  color: #2E363F;
+}
+
+#teachersDataTable > thead > tr:hover, #headmastersDataTable > thead > tr:hover{
+  background-color: transparent;
+}
+
+#studentTable{
+  display: block;
+}
+#teacherTable::-webkit-scrollbar, #headmasterTable::-webkit-scrollbar {
+  width: 1px; 
+  height: 5px;
+}
+#teacherTable::-webkit-scrollbar-track, #headmasterTable::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px; 
+}
+#teacherTable::-webkit-scrollbar-thumb, #headmasterTable::-webkit-scrollbar-thumb{
+  background: #B4975A; 
+  border-radius: 50px; 
+}
+#teacherTable::-webkit-scrollbar-thumb:hover, #headmasterTable::-webkit-scrollbar-thumb:hover {
+  background: #B4975A; 
+}
+
+/************Input style on mouse over************/
+input:hover{
+  border: 1px #2E363F solid;
+  box-shadow: 0px 2px 9px #2E363F9f;
+}
+
+select:hover{
+  border: 1px #2E363F solid;
+  box-shadow: 0px 2px 9px #2E363F9f;
+}
+
+input[type='file']:hover{
+  border: none;
+  box-shadow: none;
+}
+
+#sectionAdmin3 .card-body:hover {
+  transform: scale(1.05,1.05)!important;
+  box-shadow: 10px 0px 45px 10px rgb(229 229 229 / 75%)!important;
+  margin-left: 20px!important;
+}
+
+
+/***** Remove icon from calendar datepicker input box *****/
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/*** Section background ***/
+#sectionAdmin2, #sectionAdmin3, #sectionAdmin4, #sectionAdmin5 {
+  min-height: 50vw;
+  background: url('../images/pattern.png') 0 0 #eee repeat;
+  /* background-color: #4149525e !important; */
+}
