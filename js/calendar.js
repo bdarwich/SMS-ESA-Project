@@ -263,3 +263,15 @@ var data = [],
 $('#holder').calendar({
   data: data
 });
+
+function add_new_task() {
+  if (act.value && grade.value && messageText.value) {
+      let data = `<div class="alert alert-danger">
+  ${act.value} ${messageText.value}
+</div>`;
+      gradeOne.innerHTML += data;
+  }
+}
+addTask.addEventListener("click", add_new_task);
+
+
